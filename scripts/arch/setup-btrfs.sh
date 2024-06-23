@@ -23,13 +23,14 @@ echo "Done."
 echo ""
 echo "Installing aur..."
 
-pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+yes | pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+rm -rf ./yay
 
 echo "Done."
 echo ""
 echo "Installing timeshift-autosnap for automatic snapshot when using pacman..."
 
-yay -S timeshift-autosnap
+yes | yay -S timeshift-autosnap
 
 echo "Done."
 echo ""
