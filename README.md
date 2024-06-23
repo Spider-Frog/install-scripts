@@ -3,12 +3,11 @@ A collection of scripts to quickly install Linux systems
 
 Created and maintained by [SpiderFrog](https://github.com/Spider-Frog)
 
-## Download scripts
-
+## Download & run scripts
+```shell
+# Downloads scripts
 git clone https://github.com/Spider-Frog/install-scripts.git
 
-To run a script:
-```shell
 # Make sure to allow script execution
 chmod +x -R ./install-scripts
 
