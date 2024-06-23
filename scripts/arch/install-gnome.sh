@@ -1,15 +1,33 @@
 #!/bin/bash
 # Created by SpiderFrog https://github.com/Spider-Frog/install-scripts
 
+echo "Gnome install script by SpiderFrog"
+
+while true; do
+    read -p "This script will install the Gnome desktop environment using Wayland, Do you wan't to continue? (yes/no): " yesno
+    case $yesno in
+        [Yy]* )
+            break
+        ;;
+        [Nn]* )
+            exit
+        ;;
+        * ) echo "Answer either yes or no!";;
+    esac
+done
+
+echo ""
 echo "Installing Wayland..."
+
 pacman -S --needed wayland
 pacman -S --needed gdm
 pacman -S --needed xorg-xwayland xorg-xlsclients glfw-wayland
 
+echo "Done."
 echo ""
 echo "Installing Gnome..."
 
-yes | pacman -S --needed gnome gnome-tweaks gnome-shell-extensions gnome-browser-connector gnome-console gnome-calculator gnome-calendar gnome-control-center\
+pacman -S --needed gnome gnome-tweaks gnome-shell-extensions gnome-browser-connector gnome-console gnome-calculator gnome-calendar gnome-control-center\
                    xdg-user-dirs-gtk fwupd papirus-icon-theme adwaita-icon-theme
 
 echo "Done."
@@ -33,7 +51,7 @@ while true; do
             echo ""
             echo "Installing Pamac-Aur..."
 
-            yes | pacman -Syu pamac-aur
+            pacman -Syu pamac-aur
 
             # Check if gnome-software is installed
             if pacman -Qs gnome-software > /dev/null; then
