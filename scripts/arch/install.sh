@@ -57,9 +57,10 @@ else
 fi
 
 pacstrap -K $mnt_folder base base-devel linux linux-firmware\
-                 btrfs-progs grub efibootmgr grub-btrfs\
+                 grub efibootmgr\
+                 btrfs-progs grub-btrfs\
                  inotify-tools timeshift $cpu_package\
-                 pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber reflector\
+                 pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber\
                  zsh zsh-completions zsh-autosuggestions\
                  openssh man sudo git nano networkmanager
 

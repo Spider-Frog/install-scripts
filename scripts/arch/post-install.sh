@@ -31,7 +31,7 @@ while true; do
             echo ""
 
             # Setup timezone
-            ln -sf "/usr/share/zoneinfo/${localetime}" /etc/localtime
+            ln -sf "/usr/share/zoneinfo/${localetime}" $localetime_file
 
             # Sync the time to the hardware clock
             hwclock --systohc
